@@ -1,0 +1,14 @@
+Four Objects 
+
+Cube Map / Skybox    uses custom skybox texture found online
+Sphere   recusively built
+Cube     switches textures from crates to grass
+and Plane     uses grass texture
+are all extending the Shape class
+
+Lights - Used code from HW5 - Might have some bug from previous HW
+
+Flying Camera Interface from before 
+Skybox uses a different model view
+
+Toggle t/T to switch Cube texture from crates to grass
