@@ -214,7 +214,3 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-Project/Debug/*
-*.pdb
-Project/HW3/Debug/vc120.idb
-*.log
