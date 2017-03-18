@@ -1,29 +1,31 @@
-﻿Build started 3/18/2017 12:49:09 PM.
+﻿Build started 3/18/2017 12:56:27 PM.
      1>Project "C:\Users\chong\Desktop\GraphicsGame\Project\HW3\HW3.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (HW3.vcxproj, HW4.vcxproj, HW5.vcxproj, HW6.vcxproj).  This can lead to incorrect clean and rebuild behavior.
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt append_example7.cpp
          append_example7.cpp
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(32): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(36): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(39): warning C4244: 'argument' : conversion from 'double' to 'const GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(49): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(50): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(51): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(52): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(53): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(54): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(55): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(56): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(78): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(79): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(80): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(81): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(82): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(83): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(84): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(85): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(143): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(33): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(42): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(43): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(44): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(46): warning C4244: 'argument' : conversion from 'double' to 'const GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(58): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(59): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(60): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(61): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(62): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(63): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(64): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(65): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(87): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(88): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(89): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(90): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(91): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(92): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(93): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(94): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(152): warning C4018: '<' : signed/unsigned mismatch
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\chong\Desktop\GraphicsGame\Project\Debug\Project.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib glew32.lib freeglut.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\chong\Desktop\GraphicsGame\Project\Debug\Project.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\chong\Desktop\GraphicsGame\Project\Debug\Project.lib" /MACHINE:X86 Debug\append_example7.obj
          Debug\Camera.obj
@@ -38,4 +40,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.10
+Time Elapsed 00:00:01.12
