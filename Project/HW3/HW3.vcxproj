@@ -79,6 +79,7 @@
     <ClInclude Include="vertices.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="1.ppm" />
     <None Include="brks.ppm" />
     <None Include="crate_texture.ppm" />
     <None Include="fshader01_v150.glsl" />
@@ -103,7 +104,7 @@
     <None Include="vshader03_v150.glsl" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="append_example7.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="InitShader.cpp" />
     <ClCompile Include="Plane.cpp" />

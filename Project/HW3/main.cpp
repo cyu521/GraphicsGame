@@ -25,7 +25,7 @@ bool isCamera1 = true;
 Shape* shapes[2];
 std::vector<Shape * > cubes;
 void sunMove();
-vec4 sunPosition(1,0,0,0);
+vec4 sunPosition(.1,-.2, -.2,0);
 int angle = 0;
 float isFlashLightOn = 0.0;
 
@@ -38,7 +38,6 @@ void sunMove(int test){
 	angle+=3;
 	double radian = angle * 3.14 / 180.0;
 	sunPosition = vec4(cos(radian)*20, sin(radian)*-4, 0, 0);//rotate around the plan
-
 
 	glutPostRedisplay();
 	glutTimerFunc(250, sunMove, 0);
@@ -97,12 +96,22 @@ void removeNotSelectedCube(){
 void randomSelect(int value){
 	randomSelectedNum = rand() % cubes.size();
 	printf("%d", randomSelectedNum);
-	
+	cubes.at((int) randomSelectedNum)->setTextureType();
 	//TODO change texture 
 
 	//TODO move this code to keyboard if they guess right
-	removeNotSelectedCube();
+	//removeNotSelectedCube();
 }
+
+void tryUsersInput(int cubeSelection){
+	int cubeArraySelection = cubeSelection - 1; // Cube number is one higher than cube index
+
+	if (randomSelectedNum == cubeSelection){
+		removeNotSelectedCube();
+	}
+}
+
+
 //start moving the cubes up and down and start the game
 void startGame(int value){
 	if (startRotate){
@@ -265,6 +274,13 @@ keyboard(unsigned char key, int x, int y)
 	case'T':
 		shapes[2]->setTextureType();
 		break;
+	case '1':
+	case '2':
+	case '3':
+	case '4':
+	case '5':
+		tryUsersInput((int) key - 49); // -48 to get back key value rather than ASCII
+		break;
 	}
 	glutPostRedisplay();
 }
@@ -365,7 +381,7 @@ main(int argc, char **argv)
 
 	init();
 
-	glutTimerFunc(10, sunMove, 0);
+	//glutTimerFunc(10, sunMove, 0);
 	glutIdleFunc(display);
 	glutDisplayFunc(display);
 	glutSpecialFunc(SpecialInput);
