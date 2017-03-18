@@ -24,6 +24,8 @@ vec4 sunPosition(1,0,0,0);
 int angle = 0;
 float isFlashLightOn = 0.0;
 
+//current cube v,
+vec4 currentCubeCV[8];
 
 
 double zPos = -6;
@@ -39,28 +41,7 @@ void sunMove(int test){
 bool startRotate = false;
 bool isRandomOn = false;
 int randomSelectedNum = -1;
-void randomSelect(int value){
-	randomSelectedNum = rand() % 5;
-	printf("%d", randomSelectedNum);
-	//TODO change texture 
-}
-void startGame(int value){
-	if (startRotate){
-		mat4 t1(vec4(1, 0, 0, 0), vec4(0, 1, 0, 0), vec4(0, 0, 1, zPos), vec4(0, 0, 0, 1));
-		mat4 t2(vec4(1, 0, 0, 0), vec4(0, 1, 0, 0), vec4(0, 0, 1, -zPos), vec4(0, 0, 0, 1));
-		for (int i = 0; i < cubes.size(); i++){
-			double theta = ((double)rand());
-			cubes[i]->setModelMatrix(t1*RotateX(theta)*t2);
-		}
-
-		glutPostRedisplay();
-		glutTimerFunc(250, startGame, 0);
-	}
-
-}
-
-//current cube v,
-vec4 currentCubeCV[8];
+//Set cube vetices based on xpos
 void setCubeV(double xPos){
 	vec4 cv[] = {
 		vec4(xPos, -0.5, zPos, 1.0),
@@ -76,6 +57,57 @@ void setCubeV(double xPos){
 	for (int i = 0; i < 8; i++) {
 		currentCubeCV[i] = cv[i];
 	}
+}
+//create the cubes
+void initCubes(){
+
+	//create 5 cubes, 1.5 x pos apart. starting at -2
+	for (int i = 0; i < 5; i++){
+		double xPos = -2 + i*1.5;
+		setCubeV(xPos);
+		cubes.push_back(new Cube(currentCubeCV));
+	}
+}
+//clear the cubes and init 
+void resetCubes(int value){
+	cubes.clear();
+	initCubes();
+	
+}
+//only show the cube that is selected
+void removeNotSelectedCube(){
+	if (randomSelectedNum != -1){
+		isRandomOn = false;
+		Shape * selectedCube = cubes[randomSelectedNum];
+		cubes.clear();
+		cubes.push_back(selectedCube);
+
+		glutTimerFunc(3000, resetCubes, 0);
+	}
+}
+//randomly select a cube and change textures and light
+void randomSelect(int value){
+	randomSelectedNum = rand() % cubes.size();
+	printf("%d", randomSelectedNum);
+	//TODO change texture 
+
+	//TODO move this code to keyboard if they guess right
+	removeNotSelectedCube();
+}
+//start moving the cubes up and down and start the game
+void startGame(int value){
+	if (startRotate){
+		mat4 t1(vec4(1, 0, 0, 0), vec4(0, 1, 0, 0), vec4(0, 0, 1, zPos), vec4(0, 0, 0, 1));
+		mat4 t2(vec4(1, 0, 0, 0), vec4(0, 1, 0, 0), vec4(0, 0, 1, -zPos), vec4(0, 0, 0, 1));
+		for (int i = 0; i < cubes.size(); i++){
+			double theta = ((double)rand());
+			cubes[i]->setModelMatrix(t1*RotateX(theta)*t2);
+		}
+
+		glutPostRedisplay();
+		glutTimerFunc(250, startGame, 0);
+	}
+
 }
 void
 init()
@@ -123,12 +155,7 @@ init()
 	};
 	shapes[1] = new Plane(pv);
 
-	//create 5 cubes, 1.5 x pos apart. starting at -2
-	for (int i = 0; i < 5; i++){
-		double xPos = -2 + i*1.5;
-		setCubeV(xPos);
-		cubes.push_back(new Cube(currentCubeCV));
-	}
+	initCubes();
 
 
 	currentCam = cameras[0] = new Camera();
@@ -169,6 +196,7 @@ display(void)
 void
 keyboard(unsigned char key, int x, int y)
 {
+	//TODO  add number key that matches randomSelectedNum
 	Camera* cam = cameras[0];
 	switch (key) {
 	case 033: // Escape Key
