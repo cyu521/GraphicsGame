@@ -159,7 +159,7 @@ init()
 
 
 	currentCam = cameras[0] = new Camera();
-
+	cameras[1] = new Camera();
 
 }
 
@@ -202,6 +202,14 @@ keyboard(unsigned char key, int x, int y)
 	case 033: // Escape Key
 	case 'q': case 'Q':
 		exit(EXIT_SUCCESS);
+		break;
+	case 'a':
+	case 'A':
+		if (isCamera1)
+			currentCam = cameras[1];
+		else
+			currentCam = cameras[0];
+		isCamera1 = !isCamera1;
 		break;
 	case 040: //space
 		if (isFlashLightOn == 0.0)
@@ -265,6 +273,7 @@ void SpecialInput(int key, int x, int y)
 		break;
 	case GLUT_KEY_UP:
 
+		if (isCamera1)
 			cam->moveUp();
 		printf("up arrow pressed\n");
 		break;
@@ -275,6 +284,7 @@ void SpecialInput(int key, int x, int y)
 		printf("right arrow pressed\n");
 		break;
 	case GLUT_KEY_DOWN:
+		if (isCamera1)
 			cam->moveDown();
 		printf("down arrow pressed\n");
 		break;
