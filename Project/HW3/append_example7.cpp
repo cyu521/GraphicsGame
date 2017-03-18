@@ -5,6 +5,7 @@
 #include "Cube.h"
 #include "Sphere.h"
 #include "Plane.h"
+#include <vector>
 #include "SkyBox.h"
 void SpecialInput(int key, int x, int y);
 
@@ -16,7 +17,8 @@ GLuint  ModelView, Projection;
 Camera* cameras[2];
 Camera* currentCam;
 bool isCamera1 = true;
-Shape* shapes[7];
+Shape* shapes[2];
+std::vector<Shape * > cubes;
 void sunMove();
 vec4 sunPosition(1,0,0,0);
 int angle = 0;
@@ -24,30 +26,41 @@ float isFlashLightOn = 0.0;
 
 
 
+double zPos = -6;
 void sunMove(int test){
 	angle+=3;
 	double radian = angle * 3.14 / 180.0;
 	sunPosition = vec4(cos(radian)*20, sin(radian)*-4, 0, 0);//rotate around the plan
 
-	mat4 t1(vec4(1, 0, 0, 0), vec4(0, 1, 0, 0), vec4(0, 0, 1, -6), vec4(0, 0, 0, 1));
-	mat4 t2(vec4(1, 0, 0, 0), vec4(0, 1, 0, 0), vec4(0, 0, 1, 6), vec4(0, 0, 0, 1));
-
-	double theta = ((double)rand());
-	shapes[2]->setModelMatrix(t1*RotateX(theta)*t2);
-	theta = ((double)rand());
-	shapes[3]->setModelMatrix(t1*RotateX(theta)*t2);
-
-	theta = ((double)rand());
-	shapes[4]->setModelMatrix(t1*RotateX(theta)*t2);
-	theta = ((double)rand());
-	shapes[5]->setModelMatrix(t1*RotateX(theta)*t2);
-	theta = ((double)rand());
-	shapes[6]->setModelMatrix(t1*RotateX(theta)*t2);
+	mat4 t1(vec4(1, 0, 0, 0), vec4(0, 1, 0, 0), vec4(0, 0, 1, zPos), vec4(0, 0, 0, 1));
+	mat4 t2(vec4(1, 0, 0, 0), vec4(0, 1, 0, 0), vec4(0, 0, 1, -zPos), vec4(0, 0, 0, 1));
+	for (int i = 0; i < cubes.size(); i++){
+		double theta = ((double)rand());
+		cubes[i]->setModelMatrix(t1*RotateX(theta)*t2);
+	}
 
 	glutPostRedisplay();
 	glutTimerFunc(250, sunMove, 0);
 }
 
+//current cube v,
+vec4 currentCubeCV[8];
+void setCubeV(double xPos){
+	vec4 cv[] = {
+		vec4(xPos, -0.5, zPos, 1.0),
+		vec4(xPos, 0.5, zPos, 1.0),
+		vec4(xPos - 1, 0.5, zPos, 1.0),
+		vec4(xPos - 1, -0.5, zPos, 1.0),
+		vec4(xPos, -0.5, zPos - 1, 1.0),
+		vec4(xPos, 0.5, zPos - 1, 1.0),
+		vec4(xPos - 1, 0.5, zPos - 1, 1.0),
+		vec4(xPos - 1, -0.5, zPos - 1, 1.0)
+
+	};
+	for (int i = 0; i < 8; i++) {
+		currentCubeCV[i] = cv[i];
+	}
+}
 void
 init()
 {
@@ -94,82 +107,13 @@ init()
 	};
 	shapes[1] = new Plane(pv);
 
-	double xPos = -2;
-	double zPos = -6;
-	vec4 cv[] = {
-		vec4(xPos, -0.5, zPos, 1.0),
-		vec4(xPos, 0.5, zPos, 1.0),
-		vec4(xPos - 1, 0.5, zPos, 1.0),
-		vec4(xPos - 1, -0.5, zPos, 1.0),
-		vec4(xPos, -0.5, zPos - 1, 1.0),
-		vec4(xPos, 0.5, zPos - 1, 1.0),
-		vec4(xPos - 1, 0.5, zPos - 1, 1.0),
-		vec4(xPos - 1, -0.5, zPos - 1, 1.0)
+	//create 5 cubes, 1.5 x pos apart. starting at -2
+	for (int i = 0; i < 5; i++){
+		double xPos = -2 + i*1.5;
+		setCubeV(xPos);
+		cubes.push_back(new Cube(currentCubeCV));
+	}
 
-	};
-
-	shapes[2] = new Cube(cv);
-
-	xPos = -0.5;
-	vec4 cv1[] = {
-		vec4(xPos, -0.5, zPos, 1.0),
-		vec4(xPos, 0.5, zPos, 1.0),
-		vec4(xPos - 1, 0.5, zPos, 1.0),
-		vec4(xPos - 1, -0.5, zPos, 1.0),
-		vec4(xPos, -0.5, zPos-1, 1.0),
-		vec4(xPos, 0.5, zPos - 1, 1.0),
-		vec4(xPos - 1, 0.5, zPos - 1, 1.0),
-		vec4(xPos - 1, -0.5, zPos - 1, 1.0)
-
-	};
-
-	shapes[3] = new Cube(cv1);
-	xPos = 1;
-	vec4 cv2[] = {
-		vec4(xPos, -0.5, zPos, 1.0),
-		vec4(xPos, 0.5, zPos, 1.0),
-		vec4(xPos - 1, 0.5, zPos, 1.0),
-		vec4(xPos - 1, -0.5, zPos, 1.0),
-		vec4(xPos, -0.5, zPos - 1, 1.0),
-		vec4(xPos, 0.5, zPos - 1, 1.0),
-		vec4(xPos - 1, 0.5, zPos - 1, 1.0),
-		vec4(xPos - 1, -0.5, zPos - 1, 1.0)
-
-	};
-
-	shapes[4] = new Cube(cv2);
-
-
-	xPos = 2.5;
-	vec4 cv3[] = {
-		vec4(xPos, -0.5, zPos, 1.0),
-		vec4(xPos, 0.5, zPos, 1.0),
-		vec4(xPos - 1, 0.5, zPos, 1.0),
-		vec4(xPos - 1, -0.5, zPos, 1.0),
-		vec4(xPos, -0.5, zPos - 1, 1.0),
-		vec4(xPos, 0.5, zPos - 1, 1.0),
-		vec4(xPos - 1, 0.5, zPos - 1, 1.0),
-		vec4(xPos - 1, -0.5, zPos - 1, 1.0)
-
-	};
-
-	shapes[5] = new Cube(cv3);
-
-
-	xPos = 4;
-	vec4 cv4[] = {
-		vec4(xPos, -0.5, zPos, 1.0),
-		vec4(xPos, 0.5, zPos, 1.0),
-		vec4(xPos - 1, 0.5, zPos, 1.0),
-		vec4(xPos - 1, -0.5, zPos, 1.0),
-		vec4(xPos, -0.5, zPos - 1, 1.0),
-		vec4(xPos, 0.5, zPos - 1, 1.0),
-		vec4(xPos - 1, 0.5, zPos - 1, 1.0),
-		vec4(xPos - 1, -0.5, zPos - 1, 1.0)
-
-	};
-
-	shapes[6] = new Cube(cv4);
 
 	currentCam = cameras[0] = new Camera();
 
@@ -197,11 +141,10 @@ display(void)
 	mat4 skyBoxViewMatrix = LookAt(vec4(0,0,0,1), -n, v);
 	shapes[0]->draw(skyBoxViewMatrix, mat4(proj), sunPosition, currentCam->eye, isFlashLightOn);
 	shapes[1]->draw(mat4(view_matrix), mat4(proj), sunPosition, currentCam->eye, isFlashLightOn);
-	shapes[2]->draw(mat4(view_matrix), mat4(proj), sunPosition, currentCam->eye, isFlashLightOn);
-	shapes[3]->draw(mat4(view_matrix), mat4(proj), sunPosition, currentCam->eye, isFlashLightOn);
-	shapes[4]->draw(mat4(view_matrix), mat4(proj), sunPosition, currentCam->eye, isFlashLightOn);
-	shapes[5]->draw(mat4(view_matrix), mat4(proj), sunPosition, currentCam->eye, isFlashLightOn);
-	shapes[6]->draw(mat4(view_matrix), mat4(proj), sunPosition, currentCam->eye, isFlashLightOn);
+	for (int i = 0; i < cubes.size(); i++){
+		double theta = ((double)rand());
+		cubes[i]->draw(mat4(view_matrix), mat4(proj), sunPosition, currentCam->eye, isFlashLightOn);
+	}
 	glFlush();
 }
 
@@ -407,7 +350,7 @@ main(int argc, char **argv)
 #endif
 	glutInitWindowSize(512, 512);	//set window size to be 512x512 pixels
 
-	glutCreateWindow("Sphere");
+	glutCreateWindow("Graphics Final Project");
 
 	//initialize glew if necessary (don't need to on Macs)
 #ifndef __APPLE__

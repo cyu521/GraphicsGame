@@ -1,65 +1,31 @@
-﻿Build started 3/18/2017 11:59:57 AM.
-     1>Project "C:\Users\chong\OneDrive\Drexel\Senior\CS 432\Project\HW6\HW3\HW3.vcxproj" on node 2 (Build target(s)).
+﻿Build started 3/18/2017 12:49:09 PM.
+     1>Project "C:\Users\chong\Desktop\GraphicsGame\Project\HW3\HW3.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (HW3.vcxproj, HW4.vcxproj, HW5.vcxproj, HW6.vcxproj).  This can lead to incorrect clean and rebuild behavior.
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt append_example7.cpp
          append_example7.cpp
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(30): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(36): warning C4244: 'argument' : conversion from 'double' to 'const GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(38): warning C4244: 'argument' : conversion from 'double' to 'const GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(41): warning C4244: 'argument' : conversion from 'double' to 'const GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(43): warning C4244: 'argument' : conversion from 'double' to 'const GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(45): warning C4244: 'argument' : conversion from 'double' to 'const GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(66): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(67): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(68): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(69): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(70): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(71): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(72): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(73): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(100): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(101): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(102): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(103): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(104): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(105): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(106): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(107): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(115): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(116): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(117): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(118): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(119): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(120): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(121): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(122): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(129): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(130): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(131): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(132): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(133): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(134): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(135): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(136): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(145): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(146): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(147): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(148): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(149): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(150): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(151): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(152): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(161): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(162): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(163): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(164): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(165): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(166): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(167): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>c:\users\chong\onedrive\drexel\senior\cs 432\project\hw6\hw3\append_example7.cpp(168): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(32): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(36): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(39): warning C4244: 'argument' : conversion from 'double' to 'const GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(49): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(50): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(51): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(52): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(53): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(54): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(55): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(56): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(78): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(79): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(80): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(81): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(82): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(83): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(84): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(85): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\chong\desktop\graphicsgame\project\hw3\append_example7.cpp(143): warning C4018: '<' : signed/unsigned mismatch
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\chong\OneDrive\Drexel\Senior\CS 432\Project\HW6\Debug\Project.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib glew32.lib freeglut.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\chong\OneDrive\Drexel\Senior\CS 432\Project\HW6\Debug\Project.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\chong\OneDrive\Drexel\Senior\CS 432\Project\HW6\Debug\Project.lib" /MACHINE:X86 Debug\append_example7.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\chong\Desktop\GraphicsGame\Project\Debug\Project.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib glew32.lib freeglut.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\chong\Desktop\GraphicsGame\Project\Debug\Project.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\chong\Desktop\GraphicsGame\Project\Debug\Project.lib" /MACHINE:X86 Debug\append_example7.obj
          Debug\Camera.obj
          Debug\InitShader.obj
          Debug\Plane.obj
@@ -67,9 +33,9 @@
          Debug\SkyBox.obj
          Debug\Sphere.obj
          Debug\Cube.obj
-         HW3.vcxproj -> C:\Users\chong\OneDrive\Drexel\Senior\CS 432\Project\HW6\Debug\Project.exe
-     1>Done Building Project "C:\Users\chong\OneDrive\Drexel\Senior\CS 432\Project\HW6\HW3\HW3.vcxproj" (Build target(s)).
+         HW3.vcxproj -> C:\Users\chong\Desktop\GraphicsGame\Project\Debug\Project.exe
+     1>Done Building Project "C:\Users\chong\Desktop\GraphicsGame\Project\HW3\HW3.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.91
+Time Elapsed 00:00:01.10
