@@ -1,14 +1,55 @@
-Four Objects 
+Introduction
+Our world have 5 cubes, a grass plane, and a skybox
+On mouse click, we toggle an animation on the cubes,
+the cubes will be moving up and down.
+Then in 5 seconds, one of the cubes will be randomly selected
+This cube will change its texture and light.
+The user must select the number of the cube that was selected using the keyboard
+When the user selected right, the rest of the cubes will be removed
+and only show the selected cube for 3 seconds.
+The game then restarts.
 
-Cube Map / Skybox    uses custom skybox texture found online
-Sphere   recusively built
-Cube     switches textures from crates to grass
-and Plane     uses grass texture
-are all extending the Shape class
+User Guide
+The user have two cameras.
+Camera1 (inital camera) - free to move around the world,
+z,x,c, to roll, pitch, and yaw.
+Arrows to move around freely.
+Press A to switch to stationary camera.
+Which stays at the inital location where all 5 cubes can be viewed.
 
-Lights - Used code from HW5 - Might have some bug from previous HW
+To start the game, the user clicks on any object with the mouse
+All five cubes will start moving up and down
+In 5 seconds, one of the cube will change its texture and lighting.
+The user must select the number of the cube that changed its texture.
 
-Flying Camera Interface from before 
-Skybox uses a different model view
+After selecting the right cube
+The rest of the cube will disappear showing only the selected cube
 
-Toggle t/T to switch Cube texture from crates to grass
+Then in 3 seconds, the rest of the cubes will appear again
+Which can restart the game.
+
+Technical/Implementation Details/Notes
+Used the skybox, cube, and plane code from previous HW.
+Using rand() function to do most of the randomly selecting features
+Such as moving up and down, and randomly select the cube for the game
+By using vectors, we were able to remove cubes and add cubes back for the disappear and reappear feature.
+
+
+Work Allocation
+De -
+HW6 Code inital code
+Adding cubes
+Moving the Cubes
+Added both cameras
+Randomly Select Cube
+Disappearing and reappearing Cube once selected
+
+Robert -
+Texture to the five cubes
+Change Texture and Light on selected Cube
+Keyboard selection
+Advance Feature 
+
+
+
+Citations
