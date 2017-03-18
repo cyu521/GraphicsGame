@@ -93,7 +93,7 @@ void Cube::build(vec4 verticesList[]){
 	glGenTextures(2, texture);
 	int TextureSize = 512;
 	int TextureSize2 = 512;
-	GLubyte *image0 = ppmRead("crate_texture.ppm", &TextureSize, &TextureSize);
+	GLubyte *image0 = ppmRead((char *)textureFile.c_str(), &TextureSize, &TextureSize);
 	GLubyte *image1 = ppmRead("brks.ppm", &TextureSize2, &TextureSize2);
 
 	glBindTexture(GL_TEXTURE_2D, texture[0]);
@@ -176,11 +176,11 @@ void Cube::draw(mat4 viewMatrix, mat4 projMatrix, vec4 sunPosition, vec4 cameraE
 
 	glUniform1i(glGetUniformLocation(program, "textureID"), 0);
 
-
 	glDrawArrays(GL_TRIANGLES, 0, NumCubeVertices);
 }
-Cube::Cube(vec4 verticesList[])
+Cube::Cube(vec4 verticesList[], string initTextureFile)
 {
+	textureFile = initTextureFile;
 	build(verticesList);
 }
 
