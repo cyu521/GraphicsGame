@@ -67,7 +67,7 @@ void Cube::build(vec4 verticesList[]){
 
 
 	GLuint modelMatrix_loc = glGetUniformLocation(program, "ModelMatrix");
-	mat4 translate = Translate(0, 1, -4);
+	mat4 translate = Translate(0, 0, 0);
 	setModelMatrix(translate);
 	glUniformMatrix4fv(modelMatrix_loc, 1, GL_TRUE, modelMatrix);
 

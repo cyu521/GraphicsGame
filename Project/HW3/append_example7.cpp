@@ -37,6 +37,13 @@ void sunMove(int test){
 	glutTimerFunc(250, sunMove, 0);
 }
 bool startRotate = false;
+bool isRandomOn = false;
+int randomSelectedNum = -1;
+void randomSelect(int value){
+	randomSelectedNum = rand() % 5;
+	printf("%d", randomSelectedNum);
+	//TODO change texture 
+}
 void startGame(int value){
 	if (startRotate){
 		mat4 t1(vec4(1, 0, 0, 0), vec4(0, 1, 0, 0), vec4(0, 0, 1, zPos), vec4(0, 0, 0, 1));
@@ -45,10 +52,11 @@ void startGame(int value){
 			double theta = ((double)rand());
 			cubes[i]->setModelMatrix(t1*RotateX(theta)*t2);
 		}
+
+		glutPostRedisplay();
+		glutTimerFunc(250, startGame, 0);
 	}
 
-	glutPostRedisplay();
-	glutTimerFunc(250, startGame, 0);
 }
 
 //current cube v,
@@ -279,6 +287,11 @@ void mouse(GLint button, GLint state, GLint x, GLint y){
 	if (GLUT_UP == state){
 		startRotate = !startRotate;
 		glutTimerFunc(250, startGame, 0);
+		//we are rotating and we didn't start random Feature
+		if (startRotate && !isRandomOn){
+			isRandomOn = true;
+			glutTimerFunc(5000, randomSelect, 0);
+		}
 	}
 }
 //----------------------------------------------------------------------------
