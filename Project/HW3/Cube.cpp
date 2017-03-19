@@ -35,11 +35,11 @@ void Cube::quad(int aint, int bint, int cint, int dint, vec4 verticesList[]){
 }
 
 void Cube::buildCube(vec4 verticesList[]){
-	quad(1, 0, 3, 2, verticesList);  //front
+	quad(2, 1, 0, 3, verticesList);  //front
 	quad(2, 3, 7, 6, verticesList);  //right
 	quad(3, 0, 4, 7, verticesList);  //bottom
 	quad(6, 5, 1, 2, verticesList);  //top
-	quad(4, 5, 6, 7, verticesList);  //back
+	quad(7, 4, 5, 6, verticesList);  //back
 	quad(5, 4, 0, 1, verticesList);  //left
 }
 

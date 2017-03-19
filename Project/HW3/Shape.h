@@ -15,7 +15,7 @@ public:
 	virtual void draw(mat4 viewMatrix, mat4 projMatrix, vec4 sunPosition, vec4 cameraEye, float isFlashLightOn) = 0;
 	mat4 getModelMatrix(){ return modelmatrix; }
 	void setModelMatrix(mat4 modelMatrix) { modelmatrix = modelMatrix; }
-
+	void close(void);
 	void setTextureType(){ 
 		if (textureType == 0)
 			textureType = 1;

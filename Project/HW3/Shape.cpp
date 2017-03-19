@@ -62,3 +62,8 @@ unsigned char* Shape::ppmRead(char* filename, int* width, int* height) {
 	return image;
 
 }
+
+void Shape::close(void){
+	glDeleteBuffers(1, VBOs);
+	glDeleteVertexArrays(1, VAOs);
+}

@@ -77,6 +77,10 @@ void initCubes(){
 }
 //clear the cubes and init 
 void resetCubes(int value){
+
+	for (int i = 0; i < cubes.size(); i++){
+		cubes[i]->close();
+	}
 	cubes.clear();
 	initCubes();
 	startRotate=false;
@@ -88,6 +92,11 @@ void removeNotSelectedCube(){
 	if (randomSelectedNum != -1){
 		isRandomOn = false;
 		Shape * selectedCube = cubes[randomSelectedNum];
+
+		for (int i = 0; i < cubes.size(); i++){
+			if (i != randomSelectedNum)
+				cubes[i]->close();
+		}
 		cubes.clear();
 		cubes.push_back(selectedCube);
 
@@ -363,6 +372,15 @@ void mouse(GLint button, GLint state, GLint x, GLint y){
 }
 //----------------------------------------------------------------------------
 
+
+void close(){
+	shapes[0]->close();
+	shapes[1]->close();
+
+	for (int i = 0; i < cubes.size(); i++){
+		cubes[i]->close();
+	}
+}
 int
 main(int argc, char **argv)
 {
@@ -393,6 +411,7 @@ main(int argc, char **argv)
 	glutKeyboardFunc(keyboard);
 	glutMouseFunc(mouse);
 
+	glutWMCloseFunc(close);
 	glutMainLoop();
 	return 0;
 }
