@@ -25,7 +25,7 @@ bool isCamera1 = true;
 Shape* shapes[2];
 std::vector<Shape * > cubes;
 void sunMove();
-vec4 sunPosition(.1,-.2, -.2,0);
+vec4 sunPosition(3,100, 4,0);
 int angle = 0;
 float isFlashLightOn = 0.0;
 
@@ -65,9 +65,9 @@ void setCubeV(double xPos){
 //create the cubes
 void initCubes(){
 
-	//create 5 cubes, 1.5 x pos apart. starting at -2
+	//create 5 cubes, 1.5 x pos apart. at -2.5, -1, 0.5, 1.5, 3
 	for (int i = 0; i < 5; i++){
-		double xPos = -2 + i*1.5;
+		double xPos = -2.5 + i*1.5;
 		setCubeV(xPos);
 
 		string file = to_string(i + 1)+ ".ppm";
@@ -79,7 +79,9 @@ void initCubes(){
 void resetCubes(int value){
 	cubes.clear();
 	initCubes();
-	
+	startRotate=false;
+
+	printf("Cubes are reset\n");
 }
 //only show the cube that is selected
 void removeNotSelectedCube(){
@@ -90,6 +92,7 @@ void removeNotSelectedCube(){
 		cubes.push_back(selectedCube);
 
 		glutTimerFunc(3000, resetCubes, 0);
+		randomSelectedNum = -1;
 	}
 }
 //randomly select a cube and change textures and light
@@ -97,10 +100,6 @@ void randomSelect(int value){
 	randomSelectedNum = rand() % cubes.size();
 	printf("%d", randomSelectedNum);
 	cubes.at((int) randomSelectedNum)->setTextureType();
-	//TODO change texture 
-
-	//TODO move this code to keyboard if they guess right
-	//removeNotSelectedCube();
 }
 
 void tryUsersInput(int cubeSelection){
@@ -108,6 +107,11 @@ void tryUsersInput(int cubeSelection){
 
 	if (randomSelectedNum == cubeSelection){
 		removeNotSelectedCube();
+		printf("Congratz, You Selected the correct Cube\n");
+	}
+	else{
+
+		printf("Wrong Cube Selected,  Try again\n");
 	}
 }
 

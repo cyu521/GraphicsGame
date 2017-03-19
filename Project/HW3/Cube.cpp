@@ -116,11 +116,11 @@ void Cube::build(vec4 verticesList[]){
 
 	// Initialize shader lighting parameters
 	point4 light_position(0.0, 0.0, 2.0, 0.0);
-	color4 light_ambient(0, 0, 0, 1.0);
+	color4 light_ambient(0.5f, 0.5f, 0.5f, 1.0);
 	color4 light_diffuse(1.0, 0.8f, 0, 1.0);
 	color4 light_specular(1.0, 1, 1, 1.0);
 
-	color4 material_ambient(0, 0, 0.0, 1.0);
+	color4 material_ambient(0.5f, 1, 0.5f, 1.0);
 	color4 material_diffuse(1.0, 0.8f, 0, 1.0);
 	color4 material_specular(1.0, 1, 1, 1.0);
 	float  material_shininess = 100;
