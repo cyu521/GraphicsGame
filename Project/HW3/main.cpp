@@ -7,6 +7,7 @@
 #include "Plane.h"
 #include <vector>
 #include "SkyBox.h"
+#include "ParticleSystem.h"
 #include <iostream>
 #include <sstream>
 
@@ -19,6 +20,8 @@ typedef Angel::vec4 color4;
 
 // Model-view and projection matrices uniform location
 GLuint  ModelView, Projection;
+ParticleSystem particleSystem;
+
 Camera* cameras[2];
 Camera* currentCam;
 bool isCamera1 = true;
@@ -32,6 +35,17 @@ float isFlashLightOn = 0.0;
 //current cube v,
 vec4 currentCubeCV[8];
 
+float last_time, present_time;
+void idle(){
+	float dt;
+	present_time = glutGet(GLUT_ELAPSED_TIME);
+	dt = 0.001*(present_time - last_time);
+
+	Particl
+
+	last_time = present_time;
+	glutPostRedisplay();
+}
 
 double zPos = -6;
 void sunMove(int test){
