@@ -43,12 +43,13 @@ Moving the Cubes
 Added both cameras
 Randomly Select Cube
 Disappearing and reappearing Cube once selected
+Advance Feature - Particle, fixed issues
 
 Robert -
 Texture to the five cubes
 Change Texture and Light on selected Cube
 Keyboard selection
-Advance Feature 
+Advance Feature - Particle
 
 
 

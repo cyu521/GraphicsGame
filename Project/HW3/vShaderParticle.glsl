@@ -2,7 +2,7 @@
 
 
 
-in vec4 colorIn;
+in vec4 vColor;
 in vec4 vPosition;
 
 out  vec4 color;
@@ -13,6 +13,6 @@ uniform mat4 Projection;
 
 void main()
 {
-  gl_Position = Projection*ModelView*ModelMatrix*vPosition;
-  color = colorIn; //pass through texture location to fragment shader
+    gl_Position = Projection*ModelView*ModelMatrix*vPosition;
+  color = vColor; //pass through texture location to fragment shader
 }

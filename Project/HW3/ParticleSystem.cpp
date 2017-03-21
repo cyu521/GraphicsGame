@@ -30,6 +30,7 @@ void ParticleSystem::initializeParticles(){
 	glGenBuffers(1, &VBO);
 	glGenVertexArrays(1, &VAO);
 
+	glUseProgram(program);
 	glBindVertexArray(VAO);
 
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -71,14 +72,16 @@ void ParticleSystem::draw(mat4 viewMatrix, mat4 projMatrix){
 		particleColors[i] = particles[i].color;
 	}
 
+	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(particlePoints), particlePoints);
+	glBufferSubData(GL_ARRAY_BUFFER, sizeof(particlePoints), sizeof(particleColors), particleColors);
 	GLuint model_loc = glGetUniformLocation(program, "ModelMatrix");
 	glUniformMatrix4fv(model_loc, 1, GL_TRUE, modelMatrix);
 
-	/*GLuint viewMatrix_loc = glGetUniformLocation(program, "ModelView");
-	glUniformMatrix4fv(viewMatrix_loc, 1, GL_TRUE, viewMatrix);*/
-
-	GLuint viewMatrix_loc = glGetUniformLocation(program, "camera_matrix");
+	GLuint viewMatrix_loc = glGetUniformLocation(program, "ModelView");
 	glUniformMatrix4fv(viewMatrix_loc, 1, GL_TRUE, viewMatrix);
+
+	//GLuint viewMatrix_loc = glGetUniformLocation(program, "camera_matrix");
+	//glUniformMatrix4fv(viewMatrix_loc, 1, GL_TRUE, viewMatrix);
 
 	GLuint projection_loc = glGetUniformLocation(program, "Projection");
 	glUniformMatrix4fv(projection_loc, 1, GL_TRUE, projMatrix);
