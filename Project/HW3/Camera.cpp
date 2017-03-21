@@ -15,12 +15,9 @@ Camera::Camera()
 
 	 view_matrix = LookAt(eye, at, up);
 
-	  fov = 65.0;
-	  aspect = 512 / 512;
-	 proj = Perspective(fov, aspect, 1.0, 100);
-
-
-
+	fov = 65.0;
+	aspect = 512 / 512;
+	proj = Perspective(fov, aspect, 1.0, 100);
 }
 
 void Camera::draw(){

@@ -3,9 +3,12 @@
 
 ParticleSystem::ParticleSystem()
 {
+	program = InitShader("vShaderParticle.glsl", "fShaderParticle.glsl");
+	//program = InitShader("vShaderParticle.glsl", "fShaderParticle.glsl");
+
+	modelMatrix = Translate(0, 1, -4);
 	initializeParticles();
 }
-
 
 ParticleSystem::~ParticleSystem()
 {
@@ -23,9 +26,28 @@ void ParticleSystem::initializeParticles(){
 		particles[i].position.w = 1.0;
 		particles[i].velocity.w = 0.0;
 	}
+
+	glGenBuffers(1, &VBO);
+	glGenVertexArrays(1, &VAO);
+
+	glBindVertexArray(VAO);
+
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(particlePoints) + sizeof(particlePoints), NULL, GL_STATIC_DRAW);
+	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(particlePoints), particlePoints);
+	glBufferSubData(GL_ARRAY_BUFFER, sizeof(particlePoints), sizeof(particleColors), particleColors);
+
+	// set up vertex arrays
+	GLuint vPosition = glGetAttribLocation(program, "vPosition");
+	glEnableVertexAttribArray(vPosition);
+	glVertexAttribPointer(vPosition, 4, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(0));
+
+	GLuint vColor_loc = glGetAttribLocation(program, "vColor");
+	glEnableVertexAttribArray(vColor_loc);
+	glVertexAttribPointer(vColor_loc, 4, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(sizeof(particlePoints)));
 }
 
-float coef; //how strong it bounces back
+float coef = .01; //how strong it bounces back
 void ParticleSystem::collision(int n){
 	for (int i = 0; i<3; i++){
 		if (particles[n].position[i] >= 1.0){
@@ -40,31 +62,30 @@ void ParticleSystem::collision(int n){
 }
 
 GLuint VBO;
-void ParticleSystem::draw(){
+void ParticleSystem::draw(mat4 viewMatrix, mat4 projMatrix){
 	glBindVertexArray(VAO);
 	glUseProgram(program);
 
 	for (int i = 0; i < NUM_PARTICLES; i++){
 		particlePoints[i] = particles[i].position;
-		particlePoints[i] = particles[i].color;
+		particleColors[i] = particles[i].color;
 	}
 
-	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(particlePoints), particlePoints);
-	glBufferSubData(GL_ARRAY_BUFFER, sizeof(particlePoints), sizeof(particleColors), particleColors);
+	GLuint model_loc = glGetUniformLocation(program, "ModelMatrix");
+	glUniformMatrix4fv(model_loc, 1, GL_TRUE, modelMatrix);
 
-	GLunit model_loc = glGetUniformLocation(program, "model_matrix");
-	glUniformMatrix4fv(model_loc, 1, GL_TRUE, model_matrix);
+	/*GLuint viewMatrix_loc = glGetUniformLocation(program, "ModelView");
+	glUniformMatrix4fv(viewMatrix_loc, 1, GL_TRUE, viewMatrix);*/
 
-	GLunit camera_loc = glGetUniformLocation(program, "camera_matrix");
-	glUniformMatrix4fv(camera_loc, 1, GL_TRUE, camera_matrix);
+	GLuint viewMatrix_loc = glGetUniformLocation(program, "camera_matrix");
+	glUniformMatrix4fv(viewMatrix_loc, 1, GL_TRUE, viewMatrix);
 
-	GLunit projection_loc = glGetUniformLocation(program, "projection_matrix");
-	glUniformMatrix4fv(projection_loc, 1, GL_TRUE, projection_matrix);
+	GLuint projection_loc = glGetUniformLocation(program, "Projection");
+	glUniformMatrix4fv(projection_loc, 1, GL_TRUE, projMatrix);
 
 	glPointSize(3.0);
-	glDrawArrays(GL_POINTS, 0, NUM_PARTICLES)
+	glDrawArrays(GL_POINTS, 0, NUM_PARTICLES);
 }
-
 
 float forces(int i, int j){
 	if (j == 1) //only affect y direction
@@ -72,6 +93,7 @@ float forces(int i, int j){
 	else
 		return 0;
 }
+
 void ParticleSystem::updateParticles(float dt){
 	for (int i = 0; i < NUM_PARTICLES; i++){
 		for (int j = 0; j<3; j++){

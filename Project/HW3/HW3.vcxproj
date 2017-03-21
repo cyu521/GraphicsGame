@@ -70,6 +70,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CheckError.h" />
     <ClInclude Include="mat.h" />
+    <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="SkyBox.h" />
@@ -85,6 +86,7 @@
     <None Include="fshader01_v150.glsl" />
     <None Include="fshader02_v150.glsl" />
     <None Include="fshader03_v150.glsl" />
+    <None Include="fShaderParticle.glsl" />
     <None Include="grass256by256.ppm" />
     <None Include="grass_texture.ppm" />
     <None Include="riverside_down.ppm" />
@@ -102,11 +104,13 @@
     <None Include="vshader01_v150.glsl" />
     <None Include="vshader02_v150.glsl" />
     <None Include="vshader03_v150.glsl" />
+    <None Include="vShaderParticle.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="InitShader.cpp" />
+    <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="SkyBox.cpp" />

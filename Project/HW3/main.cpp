@@ -1,5 +1,4 @@
 // fragment shading of sphere model
-
 #include "Angel.h"
 #include "Camera.h"
 #include "Cube.h"
@@ -20,15 +19,14 @@ typedef Angel::vec4 color4;
 
 // Model-view and projection matrices uniform location
 GLuint  ModelView, Projection;
-ParticleSystem particleSystem;
-
+ParticleSystem * particleSystem;
 Camera* cameras[2];
 Camera* currentCam;
 bool isCamera1 = true;
 Shape* shapes[2];
 std::vector<Shape * > cubes;
 void sunMove();
-vec4 sunPosition(3,100, 4,0);
+vec4 sunPosition(3, 100, 4,0);
 int angle = 0;
 float isFlashLightOn = 0.0;
 
@@ -41,7 +39,7 @@ void idle(){
 	present_time = glutGet(GLUT_ELAPSED_TIME);
 	dt = 0.001*(present_time - last_time);
 
-	Particl
+	particleSystem->updateParticles(dt);
 
 	last_time = present_time;
 	glutPostRedisplay();
@@ -84,7 +82,7 @@ void initCubes(){
 		double xPos = -2.5 + i*1.5;
 		setCubeV(xPos);
 
-		string file = to_string(i + 1)+ ".ppm";
+		string file = to_string(i + 1) + ".ppm";
 
 		cubes.push_back(new Cube(currentCubeCV, file));
 	}
@@ -118,7 +116,7 @@ void removeNotSelectedCube(){
 		randomSelectedNum = -1;
 	}
 }
-//randomly select a cube and change textures and light
+//randomly select a cube and change texture
 void randomSelect(int value){
 	randomSelectedNum = rand() % cubes.size();
 	printf("%d", randomSelectedNum);
@@ -157,16 +155,6 @@ void startGame(int value){
 void
 init()
 {
-/*
-	point4 v[4] = {
-		vec4(0.0, 0.0, 1.0, 1.0),
-		vec4(0.0, 0.942809, -0.333333, 1.0),
-		vec4(-0.816497, -0.471405, -0.333333, 1.0),
-		vec4(0.816497, -0.471405, -0.333333, 1.0)
-	};
-	shapes[0] = new Sphere(v);
-	*/
-
 	double dist = 50;
 	vec4 sb[] = {
 		vec4(dist, -dist, dist, 1.0),
@@ -202,10 +190,10 @@ init()
 
 	initCubes();
 
-
 	currentCam = cameras[0] = new Camera();
 	cameras[1] = new Camera();
 
+	particleSystem = new ParticleSystem();
 }
 
 //----------------------------------------------------------------------------
@@ -233,6 +221,8 @@ display(void)
 		double theta = ((double)rand());
 		cubes[i]->draw(mat4(view_matrix), mat4(proj), sunPosition, currentCam->eye, isFlashLightOn);
 	}
+	particleSystem->draw(mat4(view_matrix), mat4(proj));
+
 	glFlush();
 }
 
@@ -418,7 +408,7 @@ main(int argc, char **argv)
 	init();
 
 	//glutTimerFunc(10, sunMove, 0);
-	glutIdleFunc(display);
+	glutIdleFunc(idle);
 	glutDisplayFunc(display);
 	glutSpecialFunc(SpecialInput);
 	glutReshapeFunc(reshape);

@@ -184,8 +184,6 @@ Cube::Cube(vec4 verticesList[], string initTextureFile)
 	build(verticesList);
 }
 
-
-
 Cube::~Cube()
 {
 	glDeleteBuffers(3, VBOs);

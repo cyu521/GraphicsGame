@@ -13,14 +13,17 @@ public:
 		vec4 velocity;
 		float mass;
 	};
-
+	mat4 modelMatrix;
+	GLuint VAO;
+	GLuint VBO;
+	GLuint program;
 	particle particles[NUM_PARTICLES];
 	vec4 particlePoints[NUM_PARTICLES];
 	vec4 particleColors[NUM_PARTICLES];
 	void initializeParticles();
 	void updateParticles(float dt);
 	void collision(int n);
-	void draw();
+	void draw(mat4 viewMatrix, mat4 projMatrix);
 	void drawParticles();
 };
 
