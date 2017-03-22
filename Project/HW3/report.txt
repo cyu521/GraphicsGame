@@ -19,7 +19,7 @@ Press A to switch to stationary camera.
 Which stays at the inital location where all 5 cubes can be viewed.
 
 To start the game, the user clicks on any object with the mouse
-All five cubes will start moving up and down
+All five cubes will start moving in random directions
 In 5 seconds, one of the cube will change its texture and lighting.
 The user must select the number of the cube that changed its texture.
 
@@ -34,6 +34,8 @@ Used the skybox, cube, and plane code from previous HW.
 Using rand() function to do most of the randomly selecting features
 Such as moving up and down, and randomly select the cube for the game
 By using vectors, we were able to remove cubes and add cubes back for the disappear and reappear feature.
+Followed Slide directions for implementation of the particles. 
+One thing that was missing from the slides was the use program, which was creating a bug for the longest time. 
 
 
 Work Allocation
@@ -44,7 +46,7 @@ Moving the Cubes
 Added both cameras
 Randomly Select Cube
 Disappearing and reappearing Cube once selected
-Advance Feature - Particle, fixed issues
+Advance Feature - Particle, fixed issues, help implement
 
 Robert -
 Texture to the five cubes + texture for blank
