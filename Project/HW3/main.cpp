@@ -161,8 +161,10 @@ void startGame(int value){
 		
 		for (int i = 0; i < cubes.size(); i++){
 			double theta = ((double)rand());
-			double moveBy = ((float)rand() / RAND_MAX) - 2.0;
-			cubes[i]->setModelMatrix(t1*Translate(moveBy, 0, 0)*RotateX(theta)*t2);
+			double moveBy = 3*((float)rand() / RAND_MAX) - 3.0;
+			double moveByY = 3*((float)rand() / RAND_MAX);
+
+			cubes[i]->setModelMatrix(t1*Translate(moveBy, moveByY, moveBy)*RotateX(theta)*t2);
 		}
 
 		glutPostRedisplay();
