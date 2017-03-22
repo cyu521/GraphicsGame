@@ -158,9 +158,11 @@ void startGame(int value){
 	if (startRotate){
 		mat4 t1(vec4(1, 0, 0, 0), vec4(0, 1, 0, 0), vec4(0, 0, 1, zPos), vec4(0, 0, 0, 1));
 		mat4 t2(vec4(1, 0, 0, 0), vec4(0, 1, 0, 0), vec4(0, 0, 1, -zPos), vec4(0, 0, 0, 1));
+		
 		for (int i = 0; i < cubes.size(); i++){
 			double theta = ((double)rand());
-			cubes[i]->setModelMatrix(t1*RotateX(theta)*t2);
+			double moveBy = ((float)rand() / RAND_MAX) - 2.0;
+			cubes[i]->setModelMatrix(t1*Translate(moveBy, 0, 0)*RotateX(theta)*t2);
 		}
 
 		glutPostRedisplay();
