@@ -31,7 +31,6 @@ void Cube::quad(int aint, int bint, int cint, int dint, vec4 verticesList[]){
 	normals[Index] = normal;  points[Index] = a;
 	vertexTextureLocations[Index] = vec2(0, 0); Index++;
 
-
 }
 
 void Cube::buildCube(vec4 verticesList[]){

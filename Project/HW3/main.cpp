@@ -123,7 +123,7 @@ void removeNotSelectedCube(){
 		cubes.push_back(selectedCube);
 
 		mciSendString("open \"horn.mp3\" type mpegvideo alias mp3", NULL, 0, NULL);
-		mciSendString("play mp3", NULL, 0, NULL);
+		mciSendString("play mp3 from 0", NULL, 0, NULL);
 
 		glutIdleFunc(idle);
 		glutTimerFunc(3000, resetCubes, 0);		
@@ -433,5 +433,7 @@ main(int argc, char **argv)
 
 	glutWMCloseFunc(close);
 	glutMainLoop();
+
 	return 0;
 }
+	

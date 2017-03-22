@@ -1,12 +1,13 @@
 Introduction
 Our world have 5 cubes, a grass plane, and a skybox
 On mouse click, we toggle an animation on the cubes,
-the cubes will be moving up and down.
+the cubes will be rotating randomly.
 Then in 5 seconds, one of the cubes will be randomly selected
-This cube will change its texture and light.
+This cube will change its texture.
 The user must select the number of the cube that was selected using the keyboard
-When the user selected right, the rest of the cubes will be removed
-and only show the selected cube for 3 seconds.
+When the user selects correctly, the rest of the cubes will be removed.
+Then only the selected cube will show for 3 seconds along with a shower of particles
+and a celebratory sound effect.
 The game then restarts.
 
 User Guide
