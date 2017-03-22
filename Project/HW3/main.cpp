@@ -9,6 +9,10 @@
 #include "ParticleSystem.h"
 #include <iostream>
 #include <sstream>
+#include <Mmsystem.h>
+#include <mciapi.h>
+//these two headers are already included in the <Windows.h> header
+#pragma comment(lib, "Winmm.lib")
 
 using namespace std;
 
@@ -118,6 +122,9 @@ void removeNotSelectedCube(){
 		cubes.clear();
 		cubes.push_back(selectedCube);
 
+		mciSendString("open \"horn.mp3\" type mpegvideo alias mp3", NULL, 0, NULL);
+		mciSendString("play mp3 from 0", NULL, 0, NULL);
+
 		glutIdleFunc(idle);
 		glutTimerFunc(3000, resetCubes, 0);		
 		glutTimerFunc(3000, resetParticles, 0);
@@ -151,9 +158,11 @@ void startGame(int value){
 	if (startRotate){
 		mat4 t1(vec4(1, 0, 0, 0), vec4(0, 1, 0, 0), vec4(0, 0, 1, zPos), vec4(0, 0, 0, 1));
 		mat4 t2(vec4(1, 0, 0, 0), vec4(0, 1, 0, 0), vec4(0, 0, 1, -zPos), vec4(0, 0, 0, 1));
+		
 		for (int i = 0; i < cubes.size(); i++){
 			double theta = ((double)rand());
-			cubes[i]->setModelMatrix(t1*RotateX(theta)*t2);
+			double moveBy = ((float)rand() / RAND_MAX) - 2.0;
+			cubes[i]->setModelMatrix(t1*Translate(moveBy, 0, 0)*RotateX(theta)*t2);
 		}
 
 		glutPostRedisplay();
@@ -426,5 +435,7 @@ main(int argc, char **argv)
 
 	glutWMCloseFunc(close);
 	glutMainLoop();
+
 	return 0;
 }
+	

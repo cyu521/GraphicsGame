@@ -81,8 +81,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="1.ppm" />
-    <None Include="brks.ppm" />
-    <None Include="crate_texture.ppm" />
+    <None Include="2.ppm" />
+    <None Include="3.ppm" />
+    <None Include="4.ppm" />
+    <None Include="5.ppm" />
+    <None Include="blank.ppm" />
     <None Include="fshader01_v150.glsl" />
     <None Include="fshader02_v150.glsl" />
     <None Include="fshader03_v150.glsl" />
@@ -119,6 +122,10 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="report.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="fireworks.mp3" />
+    <Media Include="horn.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
