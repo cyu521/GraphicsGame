@@ -111,4 +111,8 @@
   <ItemGroup>
     <Text Include="report.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="horn.mp3" />
+    <Media Include="fireworks.mp3" />
+  </ItemGroup>
 </Project>

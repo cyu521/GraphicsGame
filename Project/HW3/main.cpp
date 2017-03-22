@@ -9,6 +9,10 @@
 #include "ParticleSystem.h"
 #include <iostream>
 #include <sstream>
+#include <Mmsystem.h>
+#include <mciapi.h>
+//these two headers are already included in the <Windows.h> header
+#pragma comment(lib, "Winmm.lib")
 
 using namespace std;
 
@@ -117,6 +121,9 @@ void removeNotSelectedCube(){
 		}
 		cubes.clear();
 		cubes.push_back(selectedCube);
+
+		mciSendString("open \"horn.mp3\" type mpegvideo alias mp3", NULL, 0, NULL);
+		mciSendString("play mp3", NULL, 0, NULL);
 
 		glutIdleFunc(idle);
 		glutTimerFunc(3000, resetCubes, 0);		

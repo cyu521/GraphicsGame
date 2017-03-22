@@ -120,6 +120,10 @@
   <ItemGroup>
     <Text Include="report.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="fireworks.mp3" />
+    <Media Include="horn.mp3" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
