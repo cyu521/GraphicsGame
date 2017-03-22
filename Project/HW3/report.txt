@@ -14,8 +14,8 @@ User Guide
 The user have two cameras.
 Camera1 (inital camera) - free to move around the world,
 z,x,c, to roll, pitch, and yaw.
-Arrows to move around freely.
-Press A to switch to stationary camera.
+Arrows to move around freely - only on camera 1
+Press A to switch between cameras.
 Which stays at the inital location where all 5 cubes can be viewed.
 
 To start the game, the user clicks on any object with the mouse
