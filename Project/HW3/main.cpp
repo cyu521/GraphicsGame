@@ -99,6 +99,12 @@ void resetCubes(int value){
 
 	printf("Cubes are reset\n");
 }
+
+void resetParticles(int value){
+	glutIdleFunc(NULL);
+	particleSystem = new ParticleSystem();
+}
+
 //only show the cube that is selected
 void removeNotSelectedCube(){
 	if (randomSelectedNum != -1){
@@ -112,7 +118,10 @@ void removeNotSelectedCube(){
 		cubes.clear();
 		cubes.push_back(selectedCube);
 
-		glutTimerFunc(3000, resetCubes, 0);
+		glutIdleFunc(idle);
+		glutTimerFunc(3000, resetCubes, 0);		
+		glutTimerFunc(3000, resetParticles, 0);
+		particleSystem = new ParticleSystem();
 		randomSelectedNum = -1;
 	}
 }
@@ -408,7 +417,7 @@ main(int argc, char **argv)
 	init();
 
 	//glutTimerFunc(10, sunMove, 0);
-	glutIdleFunc(idle);
+	//glutIdleFunc(idle);
 	glutDisplayFunc(display);
 	glutSpecialFunc(SpecialInput);
 	glutReshapeFunc(reshape);

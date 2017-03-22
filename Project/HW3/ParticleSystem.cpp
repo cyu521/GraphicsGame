@@ -1,10 +1,8 @@
 #include "ParticleSystem.h"
 
-
 ParticleSystem::ParticleSystem()
 {
 	program = InitShader("vShaderParticle.glsl", "fShaderParticle.glsl");
-	//program = InitShader("vShaderParticle.glsl", "fShaderParticle.glsl");
 
 	modelMatrix = Translate(0, 1, -4);
 	initializeParticles();
@@ -18,11 +16,13 @@ void ParticleSystem::initializeParticles(){
 	for (int i = 0; i < NUM_PARTICLES; i++){
 		particles[i].mass = 1.0;
 		for (int j = 0; j < 3; j++){
-			particles[i].color[j] = ((float)rand() / RAND_MAX) - 1.0;
-			particles[i].position[j] = 2.0 * ((float)rand() / RAND_MAX) - 1.0;
-			particles[i].velocity[j] = 2.0 * ((float)rand() / RAND_MAX) - 1.0;
+			particles[i].color[j] = 1.0 * ((float)rand() / RAND_MAX);;
+			particles[i].position[j] = 0;
+			particles[i].velocity[j] = 10.0 * ((float)rand() / RAND_MAX) - 1.0;
 		}
+
 		particles[i].color.w = 1.0;
+		particles[i].position.y = 30.0;
 		particles[i].position.w = 1.0;
 		particles[i].velocity.w = 0.0;
 	}

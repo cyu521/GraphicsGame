@@ -13,6 +13,6 @@ uniform mat4 Projection;
 
 void main()
 {
-    gl_Position = Projection*ModelView*ModelMatrix*vPosition;
+  gl_Position = Projection*ModelView*ModelMatrix*vPosition;
   color = vColor; //pass through texture location to fragment shader
 }
