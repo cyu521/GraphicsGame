@@ -18,7 +18,7 @@ void ParticleSystem::initializeParticles(){
 	for (int i = 0; i < NUM_PARTICLES; i++){
 		particles[i].mass = 1.0;
 		for (int j = 0; j < 3; j++){
-			particles[i].color[j] = 1.0 * ((float)rand() / RAND_MAX);;
+			particles[i].color[j] = 1.0 * ((float)rand() / RAND_MAX);
 			particles[i].position[j] = 0;
 			particles[i].velocity[j] = 10.0 * ((float)rand() / RAND_MAX) - 1.0;
 		}

@@ -104,7 +104,7 @@ void Plane::build(vec4 vertices[]){
 
 
 	point4 light_position(0.0, 0.0, 2.0, 0.0);
-	color4 light_ambient(0, 0, 0, 1.0);
+	color4 light_ambient(1,1,1, 1.0);
 	color4 light_diffuse(0, 0.8f, 0, 1.0);
 	color4 light_specular(0, 0.8f, 0, 1.0);
 
