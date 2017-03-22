@@ -53,31 +53,90 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="vshader01_v150.glsl" />
-    <None Include="fshader01_v150.glsl" />
-    <None Include="fshader02_v150.glsl" />
-    <None Include="vshader02_v150.glsl" />
-    <None Include="crate_texture.ppm" />
-    <None Include="grass_texture.ppm" />
-    <None Include="fshader03_v150.glsl" />
-    <None Include="vshader03_v150.glsl" />
-    <None Include="riverside_down.ppm" />
-    <None Include="riverside_east.ppm" />
-    <None Include="riverside_north.ppm" />
-    <None Include="riverside_south.ppm" />
-    <None Include="riverside_up.ppm" />
-    <None Include="riverside_west.ppm" />
-    <None Include="brks.ppm" />
-    <None Include="grass256by256.ppm" />
-    <None Include="sky-back.ppm" />
-    <None Include="sky-bottom.ppm" />
-    <None Include="sky-front.ppm" />
-    <None Include="sky-left.ppm" />
-    <None Include="sky-right.ppm" />
-    <None Include="sky-top.ppm" />
-    <None Include="1.ppm" />
-    <None Include="vShaderParticle.glsl" />
-    <None Include="fShaderParticle.glsl" />
+    <None Include="vShaderParticle.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="riverside_down.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="riverside_east.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="riverside_north.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="riverside_south.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="riverside_up.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="riverside_west.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="sky-back.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="sky-bottom.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="sky-front.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="sky-left.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="sky-right.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="sky-top.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="vshader01_v150.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="vshader02_v150.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="vshader03_v150.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="grass256by256.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="1.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="fshader01_v150.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="fshader02_v150.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="fshader03_v150.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="fShaderParticle.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="grass_texture.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="4.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="5.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="2.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="3.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="blank.ppm">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="InitShader.cpp">
@@ -109,6 +168,14 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="report.txt" />
+    <Media Include="horn.mp3" />
+    <Media Include="fireworks.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="report.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -31,7 +31,6 @@ void Cube::quad(int aint, int bint, int cint, int dint, vec4 verticesList[]){
 	normals[Index] = normal;  points[Index] = a;
 	vertexTextureLocations[Index] = vec2(0, 0); Index++;
 
-
 }
 
 void Cube::buildCube(vec4 verticesList[]){
@@ -94,7 +93,7 @@ void Cube::build(vec4 verticesList[]){
 	int TextureSize = 512;
 	int TextureSize2 = 512;
 	GLubyte *image0 = ppmRead((char *)textureFile.c_str(), &TextureSize, &TextureSize);
-	GLubyte *image1 = ppmRead("brks.ppm", &TextureSize2, &TextureSize2);
+	GLubyte *image1 = ppmRead("blank.ppm", &TextureSize2, &TextureSize2);
 
 	glBindTexture(GL_TEXTURE_2D, texture[0]);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, TextureSize, TextureSize, 0, GL_RGB, GL_UNSIGNED_BYTE, image0);  //move the data onto the GPU
