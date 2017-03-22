@@ -47,10 +47,11 @@ Disappearing and reappearing Cube once selected
 Advance Feature - Particle, fixed issues
 
 Robert -
-Texture to the five cubes
+Texture to the five cubes + texture for blank
 Change Texture and Light on selected Cube
 Keyboard selection
 Advance Feature - Particle
+Sound effect
 
 
 
