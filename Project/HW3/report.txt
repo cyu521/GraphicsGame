@@ -41,6 +41,7 @@ De -
 HW6 Code inital code
 Adding cubes
 Moving the Cubes
+Initial cube movement
 Added both cameras
 Randomly Select Cube
 Disappearing and reappearing Cube once selected
@@ -52,7 +53,7 @@ Change Texture and Light on selected Cube
 Keyboard selection
 Advance Feature - Particle
 Sound effect
-
+Improved cube movement
 
 
 Citations
